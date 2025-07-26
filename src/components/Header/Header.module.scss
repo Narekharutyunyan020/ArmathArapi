@@ -37,15 +37,15 @@ $mobile-breakpoint: 768px;
 
     .logoLink {
       display: block;
-      padding: 0.5rem 0; // Լոգոյի շուրջ padding
+      padding: 0.5rem 0; 
     }
 
     .logo {
-      width: 100px; // Լոգոյի չափսը փոքրացրինք
-      height: 100px; // Լոգոյի չափսը փոքրացրինք
+      width: 100px; 
+      height: 100px; 
 
       @media (max-width: $mobile-breakpoint) {
-        width: 80px; // Բջջայինի վրա էլ ավելի փոքր
+        width: 80px; 
         height: 80px;
       }
     }

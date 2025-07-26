@@ -1,134 +1,120 @@
-.footer {
-  background-color: var(--color-light); // սպիտակ ֆոն
-  color: var(--color-dark); // մուգ տեքստ
-  padding: 2rem 1rem;
-  border-top: 1px solid #eee;
+// Variables
+$primary-color: #2d3748;      
+$accent-color: #9b59b6;       
+$text-color-light: #4a5568;   
+$bg-color-light: #ffffff;
+$border-color: #eee;      
 
-  .container {
-    max-width: 1224px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-wrap: wrap;
-  }
 
-  .left {
-    h2 {
-      font-size: 1.5rem;
-      color: var(--color-purple);
-      margin-bottom: 0.5rem;
-    }
-
-    p {
-      font-size: 1rem;
-      color: var(--color-gray);
-    }
-  }
-
-  .right {
-    ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      gap: 1.5rem;
-
-      li a {
-        text-decoration: none;
-        color: var(--color-dark);
-        font-weight: 500;
-        transition: var(--transition-default);
-
-        &:hover {
-          border-bottom: 2px solid var(--color-purple);
-        }
-      }
-    }
-  }
-}
-
-.active {
-  border-bottom: 2px solid var(--color-purple);
-  font-weight: 600;
-}
-
-.footer {
+@mixin flex-center-column {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 
+.footer {
+  background-color: $bg-color-light; 
+  color: $primary-color; 
+  padding: 2rem 1rem;
+  border-top: 1px solid $border-color;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.05); 
+}
+
+.container {
+  max-width: 1224px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 2rem; 
   @media (max-width: 768px) {
-    flex-direction: column;
-    gap: 1rem;
-    align-items: center;
-    justify-content: center;
-  }
-
-  @media (max-width: 528px) {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    @include flex-center-column;
+    gap: 1.5rem; 
   }
 }
 
 .left {
   flex: 1;
-
-  h2 {
-    margin-bottom: 0.5rem;
-    color: #2d3748;
-  }
-
-  p {
-    color: #4a5568;
-  }
+  min-width: 250px; 
 
   @media (max-width: 768px) {
     text-align: center;
   }
 }
 
+.logo {
+  font-size: 1.75rem; 
+  color: $accent-color;
+  margin-bottom: 0.75rem;
+  font-weight: 700; 
+}
+
+.tagline {
+  font-size: 1rem;
+  color: $text-color-light;
+  line-height: 1.5;
+}
+
 .right {
   flex: 1;
+  min-width: 200px; 
+  display: flex; // 
+  justify-content: flex-end; 
 
-  ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: flex-end;
-    gap: 1.5rem;
+  @media (max-width: 768px) {
+    justify-content: center; 
+  }
+}
 
-    @media (max-width: 768px) {
-      justify-content: center;
-      align-items: center;
-      gap: 0.75rem;
-    }
+.navList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 2rem; 
 
-    li {
-      a {
-        color: #4a5568;
-        text-decoration: none;
-        font-weight: 500;
-        position: relative;
+  @media (max-width: 768px) {
+    flex-wrap: wrap; 
+    justify-content: center; 
+    gap: 1rem; 
+  }
+}
 
-        &.active {
-          color: #9b59b6;
-          font-weight: 600;
-        }
+.navLink {
+  color: $text-color-light;
+  text-decoration: none;
+  padding: 0.5rem 0; 
+  position: relative;
+  transition: color 0.3s ease, font-weight 0.3s ease;
 
-        &:hover {
-          color: #9b59b6;
-        }
-      }
+  &::after { 
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: $accent-color;
+    transition: width 0.3s ease;
+  }
+
+  &:hover {
+    color: $primary-color;
+    font-weight: 600;
+    &::after {
+      width: 100%;
     }
   }
 }
- @media (max-width: 568px) {
-  .container{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
+
+.active { 
+  @extend .navLink; 
+  color: $primary-color;
+  font-weight: 600;
+
+  &::after {
+    width: 100%; 
   }
- }
+}
