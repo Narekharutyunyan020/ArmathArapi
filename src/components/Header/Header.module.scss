@@ -1,13 +1,24 @@
+
+$primary-color: #2d3748;
+$accent-color: #9b59b6;
+$text-color-light: #4a5568;
+$bg-color-light: #ffffff;
+$shadow-color: rgba(0, 0, 0, 0.1);
+$mobile-breakpoint: 768px;
+
 .header {
-  background-color: #ffffff;
-  color: #2d3748;
+  background-color: $bg-color-light;
+  color: $primary-color;
   text-align: center;
-  padding-bottom: 1rem;
+  padding-bottom: 0; 
+  .burger{
+    display: none;
+  }
 }
 
 .navbar {
-  background-color: #ffffff;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: $bg-color-light;
+  box-shadow: 0 2px 8px $shadow-color; // Ավելի արտահայտիչ ստվեր
 
   .container {
     max-width: 1224px;
@@ -16,88 +27,179 @@
     justify-content: space-between;
     align-items: center;
     position: relative;
+    padding: 0.5rem 1.5rem; // Ավելի լավ padding տարբեր էկրանների համար
+    
+
+
+    @media (max-width: $mobile-breakpoint) {
+      padding: 0.75rem 1rem; // Ավելի շատ padding բջջայինի վրա
+    }
+
+    .logoLink {
+      display: block;
+      padding: 0.5rem 0; // Լոգոյի շուրջ padding
+    }
 
     .logo {
-      width: 120px;
-      height: 120px;
+      width: 100px; // Լոգոյի չափսը փոքրացրինք
+      height: 100px; // Լոգոյի չափսը փոքրացրինք
+
+      @media (max-width: $mobile-breakpoint) {
+        width: 80px; // Բջջայինի վրա էլ ավելի փոքր
+        height: 80px;
+      }
     }
 
     .burger {
-      display: none;
       flex-direction: column;
       justify-content: space-between;
-      width: 25px;
-      height: 20px;
+      width: 30px; // Ավելի մեծ չափս բուրգերին
+      height: 22px; // Ավելի մեծ չափս բուրգերին
       background: none;
       border: none;
       cursor: pointer;
+      padding: 0;
+      z-index: 1001; // Բուրգերը միշտ լինի մենյուի վերևում
 
       span {
         display: block;
         height: 3px;
-        background: #333;
+        background: $primary-color; // Գույնը հիմնական գույնից
         border-radius: 3px;
-        transition: 0.3s;
+        transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out; // Ավելի հարթ անիմացիա
       }
 
-      // Ակտիվ վիճակ
-      span.open:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 5px);
+      &.open { // Մենյուն բացելիս
+        span:nth-child(1) {
+          transform: translateY(9px) rotate(45deg); // Ճշգրտված արժեքներ X նշանի համար
+        }
+
+        span:nth-child(2) {
+          opacity: 0;
+        }
+
+        span:nth-child(3) {
+          transform: translateY(-10px) rotate(-45deg); // Ճշգրտված արժեքներ X նշանի համար
+        }
       }
-      span.open:nth-child(2) {
-        opacity: 0;
+    }
+  }
+
+  .menu {
+    display: flex;
+    gap: 2rem; // Ավելի շատ տարածություն հղումների միջև
+
+    a {
+      color: $text-color-light;
+      text-decoration: none;
+      padding: 0.5rem 0; // Padding հղումների համար
+      position: relative; // Պատրաստվում ենք hover էֆեկտին
+      transition: color 0.3s ease; // Հարթ գույնի փոփոխություն
+
+      &::after { // Ստեղծում ենք գիծը hover էֆեկտի համար
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 0;
+        height: 2px;
+        background-color: $accent-color;
+        transition: width 0.3s ease; // Հարթ անիմացիա գծի համար
       }
-      span.open:nth-child(3) {
-        transform: rotate(-45deg) translate(5px, -5px);
+
+      &.active,
+      &:hover {
+        color: $primary-color; // Հիմնական գույնը hover/active վիճակում
+        font-weight: 600;
+        &::after {
+          width: 100%; // Գիծը ամբողջական է դառնում
+        }
       }
+
+      &.active {
+        &::after {
+          width: 100%; // Ակտիվ էլեմենտի գիծը միշտ երևում է
+        }
+      }
+    }
+  }
+
+  @media (max-width: $mobile-breakpoint) {
+    .burger {
+      display: flex; // Ցույց է տալիս բուրգերը բջջայինում
     }
 
     .menu {
-      display: flex;
-      gap: 1.5rem;
+      flex-direction: column;
+      position: fixed;
+      top: 0;
+      right: -100%; // Թաքցված է էկրանից դուրս
+      width: 80%; // Ավելի լայն բջջային մենյու
+      max-width: 300px; // Առավելագույն լայնություն
+      height: 100vh;
+      background: $bg-color-light;
+      padding: 2rem 1.5rem; // Ավելի շատ padding բջջային մենյուի ներսում
+      box-shadow: -4px 0 10px $shadow-color; // Ավելի ուժեղ ստվեր
+      transition: right 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); // Ավելի հարթ անիմացիա
+      z-index: 1000;
+      align-items: flex-start; // Հղումները սկսվում են ձախից
 
-      a {
-        color: #4a5568;
-        text-decoration: none;
-        padding-bottom: 4px;
-
-        &.active {
-          border-bottom: 2px solid #9b59b6;
-          font-weight: 600;
-        }
+      .closeButton {
+        display: block; // Ցույց է տալիս փակելու կոճակը
+        position: absolute;
+        top: 1rem;
+        right: 1.5rem;
+        background: none;
+        border: none;
+        font-size: 2rem; // Մեծ չափս X նշանի համար
+        color: $primary-color;
+        cursor: pointer;
+        transition: transform 0.2s ease-in-out;
 
         &:hover {
-          border-bottom: 2px solid #9b59b6;
-          transition: all 0.3s ease;
+          transform: rotate(90deg); // Փոքր անիմացիա hover-ի վրա
+        }
+      }
+
+      a {
+        width: 100%; // Հղումները լայնությամբ լցնում են մենյուն
+        padding: 1rem 0; // Ավելի մեծ սեղմվող տարածք
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05); // Առանձնացնող գծեր
+
+        &:last-child {
+          border-bottom: none; // Վերջին էլեմենտին գիծ չկա
+        }
+
+        &::after { // Անջատում ենք desktop-ի hover էֆեկտը
+          display: none;
+        }
+
+        &.active {
+          color: $accent-color; // Ակտիվ էլեմենտի գույնը բջջայինի վրա
         }
       }
     }
 
-    // Մեդիա հարցումներ
-    @media (max-width: 768px) {
-      .burger {
-        display: flex;
-      }
+    .menuOpen {
+      right: 0; // Սահում է դեպի տեսանելի դիրք
+    }
 
-      .menu {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background: white;
-        padding: 1rem 0;
-        z-index: 10;
+    // Backdrop for when the menu is open
+    .backdrop {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.4); // Կիսաթափանցիկ սև ծածկույթ
+      z-index: 999; // Մենյուի տակ, բայց մնացած կոնտենտի վրա
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
 
-        a {
-          padding: 1rem;
-          margin: 0;
-        }
-      }
-
-      .menuOpen {
-        display: flex !important;
+      &.show { // Ավելացնել այս կլասը React-ում
+        opacity: 1;
+        visibility: visible;
       }
     }
   }
