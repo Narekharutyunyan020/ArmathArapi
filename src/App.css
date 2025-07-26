@@ -1,0 +1,27 @@
+*{
+    box-sizing: border-box;
+    margin: 0%;
+    padding: 0%;
+}
+.container{
+    width: 1240px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+:root {
+  /* Արմաթի բրենդային գույներ */
+
+  --color-purple: #9b1c81;   /* Մանուշակագույն (լոգոյի "th"-ը և գծեր) */
+  --color-cyan: #00b3c7;     /* Կապտավուն-կանաչ (լոգոյի "arma" և գծեր) */
+  --color-gray: #777777;     /* Մոխրագույն տեքստի համար */
+  --color-light: #ffffff;    /* Սպիտակ */
+  --color-dark: #2d3748;     /* Լավ ընթերցվող մուգ տեքստ */
+  --color-accent-hover: #9b59b6; /* Այլընտրանքային hover գույն, եթե պետք է */
+
+  /* Ֆոնտի քաշեր */
+  --font-weight-regular: 400;
+  --font-weight-bold: 700;
+
+  /* Անցումներ */
+  --transition-default: all 0.3s ease;
+}

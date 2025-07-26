@@ -1,0 +1,104 @@
+.header {
+  background-color: #ffffff;
+  color: #2d3748;
+  text-align: center;
+  padding-bottom: 1rem;
+}
+
+.navbar {
+  background-color: #ffffff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+  .container {
+    max-width: 1224px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+
+    .logo {
+      width: 120px;
+      height: 120px;
+    }
+
+    .burger {
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 25px;
+      height: 20px;
+      background: none;
+      border: none;
+      cursor: pointer;
+
+      span {
+        display: block;
+        height: 3px;
+        background: #333;
+        border-radius: 3px;
+        transition: 0.3s;
+      }
+
+      // Ակտիվ վիճակ
+      span.open:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+      }
+      span.open:nth-child(2) {
+        opacity: 0;
+      }
+      span.open:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+      }
+    }
+
+    .menu {
+      display: flex;
+      gap: 1.5rem;
+
+      a {
+        color: #4a5568;
+        text-decoration: none;
+        padding-bottom: 4px;
+
+        &.active {
+          border-bottom: 2px solid #9b59b6;
+          font-weight: 600;
+        }
+
+        &:hover {
+          border-bottom: 2px solid #9b59b6;
+          transition: all 0.3s ease;
+        }
+      }
+    }
+
+    // Մեդիա հարցումներ
+    @media (max-width: 768px) {
+      .burger {
+        display: flex;
+      }
+
+      .menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: white;
+        padding: 1rem 0;
+        z-index: 10;
+
+        a {
+          padding: 1rem;
+          margin: 0;
+        }
+      }
+
+      .menuOpen {
+        display: flex !important;
+      }
+    }
+  }
+}
