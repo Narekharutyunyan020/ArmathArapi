@@ -1,3 +1,12 @@
+
+$armath-cyan: #00c8d7;
+$armath-purple: #a32c87;
+$armath-gray: #757575;
+
+$button-bg: $armath-purple;
+$button-hover: darken($armath-purple, 10%);
+
+
 .visionMission {
   padding: 4rem 1rem;
   background-color: #f1f5f9;
@@ -13,6 +22,94 @@
       text-align: center;
     }
   }
+ .buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+
+  
+.cyan {
+  background-color: #00c8d7; // կամ $armath-cyan
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+
+  &:hover {
+    background-color: #009bb2; // hover effect - կարելի է fine-tune անել
+  }
+}
+
+.purple {
+  background-color: #a32c87; // կամ $armath-purple
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+
+  &:hover {
+    background-color: #82206a; // hover version
+  }
+}
+}
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.modalContent {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 600px;
+  width: 90%;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.closeButton {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #888;
+
+  &:hover {
+    color: #000;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
 
   .block {
     flex: 1;
@@ -31,5 +128,22 @@
       font-size: 1rem;
       color: #4a5568;
     }
+  }
+}
+.ArmathMap {
+  margin-bottom: 3rem;
+
+  h1 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #1a202c;
+  }
+
+  .leaflet-container {
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    height: 500px;
+    width: 100%;
   }
 }
