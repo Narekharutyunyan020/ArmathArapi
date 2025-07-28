@@ -1,0 +1,131 @@
+.footer {
+  background-color: #ffffff;
+  color: #2d3748;
+  padding: 2rem 1rem;
+  border-top: 1px solid #eee;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.socials {
+  margin-top: 1rem;
+  display: flex;
+  gap: 2rem;
+  gap: 70px;
+}
+.socials a {
+  color: #000000;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+.socials a:hover {
+  color: #1da1f2;
+}
+
+.container {
+  max-width: 1224px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+@media (max-width: 768px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+}
+
+.left {
+  flex: 1;
+  min-width: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+@media (max-width: 768px) {
+  .left {
+    text-align: center;
+  }
+}
+
+.logo {
+  font-size: 1.75rem;
+  color: #9b59b6;
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+}
+
+.tagline {
+  font-size: 1rem;
+  color: #4a5568;
+  line-height: 1.5;
+}
+
+.right {
+  flex: 1;
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  justify-content: flex-end;
+}
+@media (max-width: 768px) {
+  .right {
+    justify-content: center;
+  }
+}
+
+.navList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 1rem;
+}
+@media (max-width: 768px) {
+  .navList {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+}
+
+.navLink, .active {
+  color: #4a5568;
+  text-decoration: none;
+  padding: 0.5rem 0;
+  position: relative;
+  transition: color 0.3s ease, font-weight 0.3s ease;
+}
+.navLink::after, .active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: #9b59b6;
+  transition: width 0.3s ease;
+}
+.navLink:hover, .active:hover {
+  color: #2d3748;
+  font-weight: 600;
+}
+.navLink:hover::after, .active:hover::after {
+  width: 100%;
+}
+
+.active {
+  color: #2d3748;
+  font-weight: 600;
+}
+.active::after {
+  width: 100%;
+}/*# sourceMappingURL=Footer.module.css.map */

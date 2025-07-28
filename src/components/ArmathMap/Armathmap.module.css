@@ -1,0 +1,13 @@
+.mapWrapper {
+  width: 50%;
+  height: 500px;
+  margin: 2rem auto;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.map {
+  width: 100%;
+  height: 100%;
+}/*# sourceMappingURL=Armathmap.module.css.map */
