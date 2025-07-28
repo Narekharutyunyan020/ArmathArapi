@@ -12,32 +12,82 @@ function Footer() {
         </div>
         <nav className={s.right}>
           <ul className={s.navList}>
-            <li>
-              <NavLink
-                to="/"
-                end
-                className={({ isActive }) => (isActive ? s.active : s.navLink)}
-              >
-                Գլխավոր
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/about"
-                className={({ isActive }) => (isActive ? s.active : s.navLink)}
-              >
-                Մեր մասին
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/contact"
-                className={({ isActive }) => (isActive ? s.active : s.navLink)}
-              >
-                Կապ
-              </NavLink>
-            </li>
-          </ul>
+  <li>
+    <NavLink
+      to="/"
+      end
+      className={({ isActive }) => (isActive ? s.active : s.navLink)}
+    >
+      Home
+    </NavLink>
+  </li>
+  <li>
+    <NavLink
+      to="/about"
+      className={({ isActive }) => (isActive ? s.active : s.navLink)}
+    >
+      About Us
+    </NavLink>
+  </li>
+  <li>
+    <NavLink
+      to="/structure"
+      className={({ isActive }) => (isActive ? s.active : s.navLink)}
+    >
+      Structure
+    </NavLink>
+  </li>
+  <li>
+    <NavLink
+      to="/fields"
+      className={({ isActive }) => (isActive ? s.active : s.navLink)}
+    >
+      Fields of Study
+    </NavLink>
+  </li>
+  
+  <li>
+    <NavLink
+      to="/events"
+      className={({ isActive }) => (isActive ? s.active : s.navLink)}
+    >
+      Events
+    </NavLink>
+  </li>
+  <li>
+    <NavLink
+      to="/projects"
+      className={({ isActive }) => (isActive ? s.active : s.navLink)}
+    >
+      Our Projects
+    </NavLink>
+  </li>
+  <li>
+    <NavLink
+      to="/join"
+      className={({ isActive }) => (isActive ? s.active : s.navLink)}
+    >
+      Join as a Student
+    </NavLink>
+  </li>
+  <li>
+    <NavLink
+      to="/support"
+      className={({ isActive }) => (isActive ? s.active : s.navLink)}
+    >
+      Support Armath
+    </NavLink>
+  </li>
+  <li>
+    <NavLink
+      to="/contact"
+      className={({ isActive }) => (isActive ? s.active : s.navLink)}
+    >
+      Contact Us
+    </NavLink>
+  </li>
+</ul>
+
 
           {/* Սոցիալական ցանցերի բաժինն ավելացրեցինք այստեղ */}
           <div className={s.socials}>

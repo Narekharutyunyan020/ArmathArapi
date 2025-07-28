@@ -1,0 +1,48 @@
+$armath-cyan: #00c8d7;
+$armath-purple: #a32c87;
+$armath-gray: #757575;
+
+$button-bg: $armath-purple;
+$button-hover: darken($armath-purple, 10%);
+
+
+.aboutPage {
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+ color: $armath-gray;
+ h1 {
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+
+  &:hover {
+    color: $armath-cyan;
+    transform: scale(1.05);
+  }
+
+  &:focus {
+    outline: none;
+    color: $armath-purple;
+    text-decoration: underline;
+  }
+}
+
+}
+
+.section {
+  margin-bottom: 2rem;
+
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  color: $armath-purple;
+  text-align: center;
+  
+  }
+
+  p {
+    font-size: 1rem;
+  }
+}
