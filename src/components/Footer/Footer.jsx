@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import s from './Footer.module.scss';
+import { FaFacebookF, FaInstagram, FaTelegramPlane } from 'react-icons/fa';
 
 function Footer() {
   return (
@@ -9,8 +10,8 @@ function Footer() {
           <h2 className={s.logo}>Արմաթ Առափի</h2>
           <p className={s.tagline}>Տեխնոլոգիաների նոր սերունդը այստեղ է սկսվում։</p>
         </div>
-        <nav className={s.right}> {/* Using <nav> for semantic correctness */}
-          <ul className={s.navList}> {/* More specific class name */}
+        <nav className={s.right}>
+          <ul className={s.navList}>
             <li>
               <NavLink
                 to="/"
@@ -37,6 +38,34 @@ function Footer() {
               </NavLink>
             </li>
           </ul>
+
+          {/* Սոցիալական ցանցերի բաժինն ավելացրեցինք այստեղ */}
+          <div className={s.socials}>
+            <a
+              href="https://facebook.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+            >
+              <FaFacebookF />
+            </a>
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+            >
+              <FaInstagram />
+            </a>
+            <a
+              href="https://t.me"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Telegram"
+            >
+              <FaTelegramPlane />
+            </a>
+          </div>
         </nav>
       </div>
     </footer>

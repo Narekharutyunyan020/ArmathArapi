@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import s from './Home.module.scss';
-import ArmathMap from '../../components/ArmathMap/Armathmap';
+import Mymap from '../../components/Mymap/Mymap';
+
 
 export const Home = () => {
   const [activeModal, setActiveModal] = useState(null);
@@ -49,8 +50,10 @@ export const Home = () => {
         </div>
       )}
       <div className={s.ArmathMap}>
-        <h1>Բարի գալուստ Արմաթ</h1>
-        <ArmathMap />
+{/* 
+        <h1>Արմաթ Գյումրիի քարտեզը</h1>
+        <Mymap/> */}
+
       </div>
     </section>
   );
