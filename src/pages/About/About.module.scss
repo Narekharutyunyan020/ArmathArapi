@@ -1,12 +1,9 @@
-// About.module.scss
 
-// Define color variables for consistency
 $armath-cyan: #00c8d7;
 $armath-purple: #a32c87;
 $armath-gray: #757575;
-$armath-accent-purple: #7f5af0; // New variable for the specific purple shade
+$armath-accent-purple: #7f5af0; 
 
-// Not used in the provided React component, but kept for reference
 $button-bg: $armath-purple;
 $button-hover: darken($armath-purple, 10%);
 
@@ -15,57 +12,57 @@ $button-hover: darken($armath-purple, 10%);
   max-width: 800px;
   margin: 0 auto;
   line-height: 1.6;
-  color: $armath-gray; // Default text color for the page
+  color: $armath-gray; 
 }
 
 .h1 {
   text-align: center;
-  color: $armath-purple; // Default color for the main heading
+  color: $armath-purple;
 }
 
 .h1Span {
-  color: $armath-cyan; // Accent color for the 'About' span
+  color: $armath-cyan; 
 }
 
 .section {
-  margin-bottom: 2rem; // Spacing between sections
+  margin-bottom: 2rem; 
 }
 
 .h2 {
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
-  color: $armath-cyan; // Default color for section headings
+  color: $armath-cyan; 
   text-align: center;
 }
 
 .h2Span {
-  color: $armath-purple; // Accent color for the span within h2
-  position: relative; // Needed for the ::after pseudo-element positioning
+  color: $armath-purple; 
+  position: relative; 
 
-  // Underline effect on hover for the span within h2
+  
   &::after {
     content: "";
     position: absolute;
-    width: 0%; // Starts with no width
+    width: 0%; 
     height: 2px;
     left: 0;
     bottom: -4px;
-    background-color: $armath-accent-purple; // Use the new accent color
-    transition: width 0.4s ease-in-out; // Smooth transition for width change
+    background-color: $armath-accent-purple; 
+    transition: width 0.4s ease-in-out; 
   }
 }
 
-// Expand the underline on hover over the h2 (or the parent .section if preferred)
+
 .h2:hover .h2Span::after {
   width: 100%;
 }
 
 .p {
   font-size: 1.2rem;
-  color: black; // Paragraph text color
+  color: black; 
 }
 
-// Keyframes for the typewriter effect
+
 @keyframes typing {
   from {
     width: 0;
@@ -75,7 +72,6 @@ $button-hover: darken($armath-purple, 10%);
   }
 }
 
-// Keyframes for the blinking cursor effect
 @keyframes blink {
   50% {
     border-color: transparent;
@@ -83,10 +79,10 @@ $button-hover: darken($armath-purple, 10%);
 }
 
 .typewriter {
-  overflow: hidden; /* Ensures the text is hidden until typed */
-  border-right: 0.15em solid orange; /* The blinking cursor */
-  white-space: nowrap; /* Prevents text from wrapping */
+  overflow: hidden;  
+  border-right: 0.15em solid ;
+  white-space: nowrap; 
   animation:
     typing 2s steps(30, end),
-    blink 0.75s step-end infinite; /* Apply both typing and blinking animations */
+    blink 0.75s step-end infinite; 
 }
