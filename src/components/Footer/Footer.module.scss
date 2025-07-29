@@ -4,8 +4,9 @@ $accent-color: #9b59b6;
 $text-color-light: #4a5568;
 $bg-color-light: #ffffff;
 $border-color: #eee;
-
-
+$armath-cyan: #00c8d7;
+$armath-purple: #a32c87;
+$armath-gray: #757575;
 
 
 @mixin flex-center-column {
@@ -17,7 +18,7 @@ $border-color: #eee;
 
 .footer {
   background-color: $bg-color-light;
-  color: $primary-color;
+  color: $armath-purple;
   padding: 2rem 1rem;
   border-top: 1px solid $border-color;
   box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.05);
@@ -70,7 +71,7 @@ $border-color: #eee;
 
 .logo {
   font-size: 1.75rem;
-  color: $accent-color;
+  color: $armath-purple;
   margin-bottom: 0.75rem;
   font-weight: 700;
 }
@@ -100,7 +101,20 @@ $border-color: #eee;
   padding: 0;
   margin: 0;
   display: flex;
-  gap: 1rem;
+  flex-direction: column;
+  align-items: center;
+  gap:1.5rem;
+  .navlist1{
+    display: flex;
+    align-items: center;
+    gap: 17px;
+
+  }
+  .navlist2{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
 
   @media (max-width: 768px) {
     flex-wrap: wrap;

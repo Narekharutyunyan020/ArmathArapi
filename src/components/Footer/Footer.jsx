@@ -11,82 +11,82 @@ function Footer() {
           <p className={s.tagline}>Տեխնոլոգիաների նոր սերունդը այստեղ է սկսվում։</p>
         </div>
         <nav className={s.right}>
-          <ul className={s.navList}>
-  <li>
-    <NavLink
-      to="/"
-      end
-      className={({ isActive }) => (isActive ? s.active : s.navLink)}
-    >
-      Home
-    </NavLink>
-  </li>
-  <li>
-    <NavLink
-      to="/about"
-      className={({ isActive }) => (isActive ? s.active : s.navLink)}
-    >
-      About Us
-    </NavLink>
-  </li>
-  <li>
-    <NavLink
-      to="/structure"
-      className={({ isActive }) => (isActive ? s.active : s.navLink)}
-    >
-      Structure
-    </NavLink>
-  </li>
-  <li>
-    <NavLink
-      to="/fields"
-      className={({ isActive }) => (isActive ? s.active : s.navLink)}
-    >
-      Fields of Study
-    </NavLink>
-  </li>
-  
-  <li>
-    <NavLink
-      to="/events"
-      className={({ isActive }) => (isActive ? s.active : s.navLink)}
-    >
-      Events
-    </NavLink>
-  </li>
-  <li>
-    <NavLink
-      to="/projects"
-      className={({ isActive }) => (isActive ? s.active : s.navLink)}
-    >
-      Our Projects
-    </NavLink>
-  </li>
-  <li>
-    <NavLink
-      to="/join"
-      className={({ isActive }) => (isActive ? s.active : s.navLink)}
-    >
-      Join as a Student
-    </NavLink>
-  </li>
-  <li>
-    <NavLink
-      to="/support"
-      className={({ isActive }) => (isActive ? s.active : s.navLink)}
-    >
-      Support Armath
-    </NavLink>
-  </li>
-  <li>
-    <NavLink
-      to="/contact"
-      className={({ isActive }) => (isActive ? s.active : s.navLink)}
-    >
-      Contact Us
-    </NavLink>
-  </li>
-</ul>
+          <div className={s.navList}>
+            <div className={s.navlist1}>
+              <NavLink
+                to="/"
+                end
+                className={({ isActive }) => (isActive ? s.active : s.navLink)}
+              >
+                Home
+              </NavLink>
+
+              <NavLink
+                to="/about"
+                className={({ isActive }) => (isActive ? s.active : s.navLink)}
+              >
+                About Us
+              </NavLink>
+
+              <NavLink
+                to="/structure"
+                className={({ isActive }) => (isActive ? s.active : s.navLink)}
+              >
+                Structure
+              </NavLink>
+
+              <NavLink
+                to="/fields"
+                className={({ isActive }) => (isActive ? s.active : s.navLink)}
+              >
+                Fields of Study
+              </NavLink>
+
+            </div>
+            <div className={s.navlist2}>
+              <NavLink
+                to="/events"
+                className={({ isActive }) => (isActive ? s.active : s.navLink)}
+              >
+                Events
+              </NavLink>
+
+
+              <NavLink
+                to="/projects"
+                className={({ isActive }) => (isActive ? s.active : s.navLink)}
+              >
+                Our Projects
+              </NavLink>
+
+
+              <NavLink
+                to="/join"
+                className={({ isActive }) => (isActive ? s.active : s.navLink)}
+              >
+                Join as a Student
+              </NavLink>
+
+
+              <NavLink
+                to="/support"
+                className={({ isActive }) => (isActive ? s.active : s.navLink)}
+              >
+                Support Armath
+              </NavLink>
+
+
+              <NavLink
+                to="/contact"
+                className={({ isActive }) => (isActive ? s.active : s.navLink)}
+              >
+                Contact Us
+              </NavLink>
+
+            </div>
+
+
+          </div>
 
 
           {/* Սոցիալական ցանցերի բաժինն ավելացրեցինք այստեղ */}
