@@ -2,33 +2,145 @@ $armath-cyan: #00c8d7;
 $armath-purple: #a32c87;
 $armath-gray: #757575;
 
-$button-bg: $armath-purple;
-$button-hover: darken($armath-purple, 10%);
+.contactSection {
+  padding: 3rem 2rem;
+  background-color: #f9f9f9;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+
+  h2 {
+    font-size: 2.2rem;
+    color: $armath-purple;
+    margin-bottom: 0.5rem;
+    text-align: center;
+  }
+ 
 
 
-.wrapper {
-  max-width: 500px;
-  margin: 20px auto;
-  text-align: center;
-}
+     h4{
+    text-align: center;
+    color: $armath-gray;
+    margin-bottom: 2rem;
+   }
 
-.button {
-  background-color:$armath-cyan;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-  transition: background-color 0.3s ease;
+  .contactContent {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10rem;
 
-  &:hover {
-    background-color:$armath-purple;
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+  }
+.contactList {
+  list-style: none;
+  padding: 0;
+  gap: 30px;
+
+  li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+
+    .icon {
+      color: $armath-purple;
+      margin-right: 10px;
+    }
+
+    a {
+      color: $armath-cyan;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
   }
 }
 
-.text {
-  margin-top: 15px;
-  font-size: 16px;
-  color: #333;
+  .contactInfo {
+    ul {
+      list-style: none;
+      padding: 0;
+
+      li {
+        margin-bottom: 1rem;
+        color: $armath-gray;
+
+        a {
+          color: $armath-cyan;
+          text-decoration: underline;
+        }
+      }
+    }
+
+  .socialLinks {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $armath-gray;
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: $armath-purple;
+    }
+
+    .icon {
+      width: 24px;
+      height: 24px;
+      fill: white;
+    }
+  }
+}
+
+  }
+
+  .contactForm {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    label {
+      font-weight: 500;
+      color: $armath-gray;
+
+      input,
+      textarea {
+        margin-top: 0.5rem;
+        padding: 0.75rem;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        width: 100%;
+        font-size: 1rem;
+      }
+    }
+
+    button {
+      align-self: flex-start;
+      padding: 0.75rem 1.5rem;
+      background-color: $armath-purple;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.2s;
+
+      &:hover {
+        background-color: darken($armath-purple, 10%);
+      }
+    }
+  }
 }

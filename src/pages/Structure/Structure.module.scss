@@ -74,8 +74,7 @@ $armath-gray: #757575;
   user-select: none;
   transform-origin: 0 0; /* Set transform origin to top-left for easier rotation around the center */
 
-  /* Position using CSS variable --angle */
-  /* The electron now rotates with the orbit, and its individual transform positions it on the circumference */
+  
   transform:
     rotate(var(--angle))
     translateX(190px) /* half of orbit width - half of electron width roughly */
