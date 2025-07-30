@@ -35,15 +35,16 @@ function Footer() {
                 Structure
               </NavLink>
 
-              <NavLink
+             
+
+            </div>
+            <div className={s.navlist2}>
+               <NavLink
                 to="/fields"
                 className={({ isActive }) => (isActive ? s.active : s.navLink)}
               >
                 Fields of Study
               </NavLink>
-
-            </div>
-            <div className={s.navlist2}>
               <NavLink
                 to="/events"
                 className={({ isActive }) => (isActive ? s.active : s.navLink)}
@@ -60,6 +61,10 @@ function Footer() {
               </NavLink>
 
 
+
+
+            </div>
+            <div className={s.navlist3}>
               <NavLink
                 to="/join"
                 className={({ isActive }) => (isActive ? s.active : s.navLink)}
@@ -82,7 +87,6 @@ function Footer() {
               >
                 Contact Us
               </NavLink>
-
             </div>
 
 
